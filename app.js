@@ -16,52 +16,21 @@ let honapok = [
     {honapnev: "december" , evszak: "tél" , napokszama:31}
 ]
 
+try{
+    function adatKereses(){
+        if (honapszam < 1 || honapszam > 12){
+            throw Error ("a szám nincs 1-12 közt, olyat adj meg ami 1-12 közt van!")
+        }
+        else if (isNaN(honapszam)){
+            throw Error ("nem számot adtál meg!")
+        }
+        console.log(honapok[honapszam - 1])
 
-if (honapszam < 1 || honapszam > 12){
-    window.alert("A hónapszámnak egy számnak kell lennie 1-12 közt!")
-    honapszam = window.prompt("hányadik hónapot szeretnéd kiirni? 1-12")
-}
-else{
+    }
     adatKereses();
+
 }
-
-
-function adatKereses(){
-    if(honapszam == 1){
-        console.log(honapok[0])
-    }
-    else if (honapszam == 2){
-        console.log(honapok[1])
-    }
-    else if (honapszam == 3){
-        console.log(honapok[2])
-    }
-    else if (honapszam == 4){
-        console.log(honapok[3])
-    }
-    else if (honapszam == 5){
-        console.log(honapok[4])
-    }
-    else if (honapszam == 6){
-        console.log(honapok[5])
-    }
-    else if (honapszam == 7){
-        console.log(honapok[6])
-    }
-    else if (honapszam == 8){
-        console.log(honapok[7])
-    }
-    else if (honapszam == 9){
-        console.log(honapok[8])
-    }
-    else if (honapszam == 10){
-        console.log(honapok[9])
-    }
-    else if (honapszam == 11){
-        console.log(honapok[10])
-    }
-    else if (honapszam == 12){
-        console.log(honapok[11])
-    }
-
+catch (error)
+{
+    console.log(error.message)
 }
